@@ -43,3 +43,17 @@ Pass 1 costs minutes and is amortized across every future edit of that
 video. Pass 2 costs seconds per cut. Never skip Pass 1 to "save time" —
 an unindexed video forces a full re-scan on every question, which is the
 expensive path.
+
+## Publishing the example timeline
+
+GitHub Pages is configured with `/docs` as its source root, so only files
+under `docs/` are served. After building an example, sync it into the site:
+
+```
+tools/publish_example.sh examples/<video-id>
+```
+
+This copies `catalog.json` + `frames/` to `docs/example/`, which
+`docs/index.html` loads via the relative `example/` path. Verify after
+deploy with `curl -s -o /dev/null -w "%{http_code}"` on both the JSON and
+one frame URL — a 200 on the page alone proves nothing.
