@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>video-understanding — IWA S02E01 Trailer Catalog</title>
+<style>
+  :root { --bg:#0b0d10; --card:#15181d; --line:#262b33; --txt:#e8eaed; --dim:#9aa0a8; --acc:#6ea8fe; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:system-ui,-apple-system,sans-serif; margin:0; padding:24px; }
+  header { max-width:1200px; margin:0 auto 20px; }
+  h1 { font-size:22px; margin:0 0 6px; }
+  p.sub { color:var(--dim); margin:0 0 4px; font-size:14px; }
+  .meta { color:var(--dim); font-size:13px; margin-top:8px; }
+  .meta b { color:var(--txt); }
+  #timeline { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; max-width:1200px; margin:0 auto; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; cursor:pointer; }
+  .card:hover { border-color:var(--acc); }
+  .card img { width:100%; display:block; aspect-ratio:1/1; object-fit:cover; }
+  .card .body { padding:10px 12px; }
+  .card .t { font-size:12px; color:var(--acc); font-weight:600; }
+  .card .narr { font-size:13px; margin:6px 0; min-height:18px; font-style:italic; color:#d7dce2; }
+  .card .vis { font-size:12px; color:var(--dim); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  #detail { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; padding:20px; z-index:10; }
+  #detail.open { display:flex; }
+  #detail .box { background:var(--card); border:1px solid var(--line); border-radius:12px; max-width:760px; width:100%; max-height:90vh; overflow:auto; padding:20px; }
+  #detail img { width:200px; border-radius:8px; float:right; margin:0 0 12px 16px; }
+  #detail h2 { margin:0 0 10px; font-size:18px; }
+  #detail pre { background:#0b0d10; border:1px solid var(--line); border-radius:8px; padding:12px; overflow:auto; font-size:12px; clear:both; }
+  #detail .close { float:right; background:none; border:1px solid var(--line); color:var(--txt); border-radius:8px; padding:6px 12px; cursor:pointer; }
+  section.format { max-width:1200px; margin:32px auto 0; }
+  section.format pre { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; overflow:auto; font-size:12px; }
+  a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>video-understanding — worked example</h1>
+  <p class="sub">Per-second machine-readable catalog of <b>IWA-S02E01-Trailer-v2.mp4</b> (37.5s). This is the <i>dictionary</i>: every second indexed with what's visible, what's said, and whether they match. Precision cuts resolve through this index, then pull full-rate frames for one second only.</p>
+  <div class="meta" id="meta"></div>
+</header>
+<div id="timeline"></div>
+<section class="format">
+  <h2>The data structure</h2>
+  <p class="sub">One <a href="../examples/iwa-s02e01-trailer-v2/catalog.json">catalog.json</a> record per second (click any card above for its full record):</p>
+  <pre id="sample"></pre>
+</section>
+<div id="detail"><div class="box"><button class="close" onclick="document.getElementById('detail').classList.remove('open')">Close</button><div id="detailBody"></div></div></div>
+<script>
+const BASE = '../examples/iwa-s02e01-trailer-v2/';
+fetch(BASE + 'catalog.json').then(r => r.json()).then(c => {
+  document.getElementById('meta').innerHTML =
+    `<b>${c.seconds.length}</b> seconds · <b>${c.transcript.words.length}</b> transcribed words · ` +
+    `${c.video.width}×${c.video.height} @ ${c.video.fps}fps · sha256 <code>${c.video.sha256.slice(0,12)}…</code>`;
+  const tl = document.getElementById('timeline');
+  c.seconds.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'card';
+    d.innerHTML =
+      `<img loading="lazy" src="${BASE}${s.frame}" alt="second ${s.t}">` +
+      `<div class="body"><div class="t">T${s.t} · ${s.t}.0–${s.t+1}.0s</div>` +
+      `<div class="narr">${s.narration.length ? '“' + s.narration.join(' ') + '”' : '<span style="color:#5f656d">— no speech —</span>'}</div>` +
+      `<div class="vis">${s.visual.summary}</div></div>`;
+    d.onclick = () => {
+      document.getElementById('detailBody').innerHTML =
+        `<img src="${BASE}${s.frame}"><h2>Second ${s.t}</h2><pre>${JSON.stringify(s, null, 1).replace(/</g,'&lt;')}</pre>`;
+      document.getElementById('detail').classList.add('open');
+    };
+    tl.appendChild(d);
+  });
+  document.getElementById('sample').textContent = JSON.stringify(c.seconds[20], null, 1);
+});
+document.getElementById('detail').addEventListener('click', e => {
+  if (e.target.id === 'detail') e.target.classList.remove('open');
+});
+</script>
+</body>
+</html>
