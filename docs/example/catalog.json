@@ -1,0 +1,1136 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iwa-s02e01-trailer-v2",
+  "source_file": "IWA-S02E01-Trailer-v2.mp4",
+  "sha256": "d59febe04b97a961ccb7043b8121d5debdf739335acf876d789a5f961e34918a",
+  "duration_s": 37.512,
+  "fps": 30,
+  "width": 1350,
+  "height": 1350,
+  "analyzed_at": "2026-09-19"
+ },
+ "transcript": {
+  "engine": "faster-whisper/base",
+  "corrections": [
+   {
+    "from": "Bila",
+    "to": "Bela",
+    "reason": "proper noun per recorded script"
+   }
+  ],
+  "words": [
+   {
+    "w": "Hey,",
+    "start": 2.34,
+    "end": 2.9
+   },
+   {
+    "w": "I'm",
+    "start": 3.3,
+    "end": 3.38
+   },
+   {
+    "w": "Felix.",
+    "start": 3.38,
+    "end": 3.6
+   },
+   {
+    "w": "Bela",
+    "start": 4.28,
+    "end": 4.52
+   },
+   {
+    "w": "and",
+    "start": 4.52,
+    "end": 4.72
+   },
+   {
+    "w": "I",
+    "start": 4.72,
+    "end": 4.88
+   },
+   {
+    "w": "host",
+    "start": 4.88,
+    "end": 5.24
+   },
+   {
+    "w": "immersive",
+    "start": 5.24,
+    "end": 5.82
+   },
+   {
+    "w": "web",
+    "start": 5.82,
+    "end": 6.08
+   },
+   {
+    "w": "adventures,",
+    "start": 6.08,
+    "end": 6.56
+   },
+   {
+    "w": "a",
+    "start": 6.98,
+    "end": 7.06
+   },
+   {
+    "w": "video",
+    "start": 7.06,
+    "end": 7.38
+   },
+   {
+    "w": "series",
+    "start": 7.38,
+    "end": 7.82
+   },
+   {
+    "w": "where",
+    "start": 7.82,
+    "end": 8.04
+   },
+   {
+    "w": "we",
+    "start": 8.04,
+    "end": 8.18
+   },
+   {
+    "w": "build",
+    "start": 8.18,
+    "end": 8.46
+   },
+   {
+    "w": "VR",
+    "start": 8.46,
+    "end": 8.68
+   },
+   {
+    "w": "experiences",
+    "start": 8.68,
+    "end": 9.3
+   },
+   {
+    "w": "with",
+    "start": 9.3,
+    "end": 9.82
+   },
+   {
+    "w": "AI.",
+    "start": 9.82,
+    "end": 10.04
+   },
+   {
+    "w": "For",
+    "start": 10.78,
+    "end": 11.12
+   },
+   {
+    "w": "season",
+    "start": 11.12,
+    "end": 11.42
+   },
+   {
+    "w": "two,",
+    "start": 11.42,
+    "end": 11.76
+   },
+   {
+    "w": "we're",
+    "start": 11.88,
+    "end": 12.14
+   },
+   {
+    "w": "taking",
+    "start": 12.14,
+    "end": 12.42
+   },
+   {
+    "w": "one",
+    "start": 12.42,
+    "end": 12.82
+   },
+   {
+    "w": "survival",
+    "start": 12.82,
+    "end": 13.32
+   },
+   {
+    "w": "crafting",
+    "start": 13.32,
+    "end": 13.8
+   },
+   {
+    "w": "game",
+    "start": 13.8,
+    "end": 14.06
+   },
+   {
+    "w": "from",
+    "start": 14.06,
+    "end": 14.28
+   },
+   {
+    "w": "the",
+    "start": 14.28,
+    "end": 14.48
+   },
+   {
+    "w": "first",
+    "start": 14.48,
+    "end": 14.66
+   },
+   {
+    "w": "idea",
+    "start": 14.66,
+    "end": 15.04
+   },
+   {
+    "w": "all",
+    "start": 15.04,
+    "end": 15.46
+   },
+   {
+    "w": "the",
+    "start": 15.46,
+    "end": 15.58
+   },
+   {
+    "w": "way",
+    "start": 15.58,
+    "end": 15.72
+   },
+   {
+    "w": "to",
+    "start": 15.72,
+    "end": 15.86
+   },
+   {
+    "w": "release.",
+    "start": 15.86,
+    "end": 16.14
+   },
+   {
+    "w": "Here's",
+    "start": 16.68,
+    "end": 16.94
+   },
+   {
+    "w": "a",
+    "start": 16.94,
+    "end": 17.02
+   },
+   {
+    "w": "quick",
+    "start": 17.02,
+    "end": 17.18
+   },
+   {
+    "w": "look",
+    "start": 17.18,
+    "end": 17.4
+   },
+   {
+    "w": "at",
+    "start": 17.4,
+    "end": 17.76
+   },
+   {
+    "w": "episode",
+    "start": 17.76,
+    "end": 18.1
+   },
+   {
+    "w": "one.",
+    "start": 18.1,
+    "end": 18.38
+   },
+   {
+    "w": "We",
+    "start": 19.5,
+    "end": 19.7
+   },
+   {
+    "w": "started",
+    "start": 19.7,
+    "end": 20.04
+   },
+   {
+    "w": "with",
+    "start": 20.04,
+    "end": 20.5
+   },
+   {
+    "w": "AI",
+    "start": 20.5,
+    "end": 20.72
+   },
+   {
+    "w": "interviewing",
+    "start": 20.72,
+    "end": 21.26
+   },
+   {
+    "w": "us",
+    "start": 21.26,
+    "end": 21.54
+   },
+   {
+    "w": "about",
+    "start": 21.54,
+    "end": 21.76
+   },
+   {
+    "w": "what",
+    "start": 21.76,
+    "end": 21.96
+   },
+   {
+    "w": "we",
+    "start": 21.96,
+    "end": 22.1
+   },
+   {
+    "w": "wanted",
+    "start": 22.1,
+    "end": 22.32
+   },
+   {
+    "w": "to",
+    "start": 22.32,
+    "end": 22.46
+   },
+   {
+    "w": "build.",
+    "start": 22.46,
+    "end": 22.68
+   },
+   {
+    "w": "Our",
+    "start": 23.08,
+    "end": 23.28
+   },
+   {
+    "w": "answers",
+    "start": 23.28,
+    "end": 23.6
+   },
+   {
+    "w": "became",
+    "start": 23.6,
+    "end": 24.02
+   },
+   {
+    "w": "a",
+    "start": 24.02,
+    "end": 24.36
+   },
+   {
+    "w": "game",
+    "start": 24.36,
+    "end": 24.52
+   },
+   {
+    "w": "design,",
+    "start": 24.52,
+    "end": 24.88
+   },
+   {
+    "w": "a",
+    "start": 25.26,
+    "end": 25.34
+   },
+   {
+    "w": "mood",
+    "start": 25.34,
+    "end": 25.52
+   },
+   {
+    "w": "board,",
+    "start": 25.52,
+    "end": 25.84
+   },
+   {
+    "w": "and",
+    "start": 25.84,
+    "end": 26.28
+   },
+   {
+    "w": "this",
+    "start": 26.28,
+    "end": 26.42
+   },
+   {
+    "w": "first",
+    "start": 26.42,
+    "end": 26.82
+   },
+   {
+    "w": "3D",
+    "start": 26.82,
+    "end": 27.34
+   },
+   {
+    "w": "campsite.",
+    "start": 27.34,
+    "end": 27.88
+   },
+   {
+    "w": "And",
+    "start": 28.5,
+    "end": 28.92
+   },
+   {
+    "w": "when",
+    "start": 28.92,
+    "end": 29.12
+   },
+   {
+    "w": "the",
+    "start": 29.12,
+    "end": 29.3
+   },
+   {
+    "w": "game",
+    "start": 29.3,
+    "end": 29.44
+   },
+   {
+    "w": "is",
+    "start": 29.44,
+    "end": 29.62
+   },
+   {
+    "w": "finally",
+    "start": 29.62,
+    "end": 29.9
+   },
+   {
+    "w": "ready,",
+    "start": 29.9,
+    "end": 30.22
+   },
+   {
+    "w": "you",
+    "start": 30.76,
+    "end": 30.9
+   },
+   {
+    "w": "get",
+    "start": 30.9,
+    "end": 31.2
+   },
+   {
+    "w": "to",
+    "start": 31.2,
+    "end": 31.34
+   },
+   {
+    "w": "tell",
+    "start": 31.34,
+    "end": 31.56
+   },
+   {
+    "w": "us",
+    "start": 31.56,
+    "end": 31.82
+   },
+   {
+    "w": "if",
+    "start": 31.82,
+    "end": 32.06
+   },
+   {
+    "w": "it's",
+    "start": 32.06,
+    "end": 32.26
+   },
+   {
+    "w": "any",
+    "start": 32.26,
+    "end": 32.4
+   },
+   {
+    "w": "good.",
+    "start": 32.4,
+    "end": 32.6
+   }
+  ]
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "Pure black frame with a single white vertical bar on the left third \u2014 the opening beat of the IWA logo animation (the \"I\" drawing in). No other graphics or text. Transition: animated logo reveal in progress, no camera cut.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Black background with the large white \"IWA\" wordmark now fully formed, center-frame, plus a small blue arc segment appearing above the \"A\" (the logo's loading-arc motif). Clean, high-contrast intro card. Transition: logo animation continuing, no camera cut.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Dissolve in progress \u2014 the semi-transparent IWA logo overlays a talking-head shot of Felix fading in beneath it. Under the logo, the text \"Immersive Web Adventures\" and \"iwa.dev\" are visible; a white caption \"Hey, I'm Felix.\" sits at the bottom. Transition: crossfade from intro logo card to the talking head.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "Hey,"
+   ],
+   "match": "The visual is the branded intro dissolving into the speaker as he introduces himself \u2014 the logo overlay ties the show identity to his first words."
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Clear medium close-up of Felix speaking to camera \u2014 dark hair, round glasses, black t-shirt \u2014 framed against a pegboard wall of VR headsets lit blue on the left and warm orange on the right, with a framed photo on the left wall. White caption \"Hey, I'm Felix.\" at the bottom. Transition: none, settled talking-head shot.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "I'm",
+    "Felix."
+   ],
+   "match": "Direct match \u2014 the speaker is on screen delivering his own introduction, caption synced to his words."
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "Medium close-up talking head of a man with glasses and a black t-shirt, centered, against a pegboard wall holding several VR headsets lit by blue light on the left and warm orange on the right. White bold caption burned in at bottom reads \"Bela and I\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "Bela",
+    "and",
+    "I",
+    "host"
+   ],
+   "match": "Visual directly illustrates the narration \u2014 the speaker (Felix) is on camera introducing himself and Bela; the burned-in caption mirrors the spoken words."
+  },
+  {
+   "t": 5,
+   "frame": "frames/f006.jpg",
+   "visual": {
+    "summary": "Same talking-head framing, subject's mouth mid-speech; pegboard of VR headsets and blue/orange lighting unchanged. Bottom caption now reads \"host Immersive Web\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "host",
+    "immersive",
+    "web"
+   ],
+   "match": "Visual supports the narration \u2014 the speaker continues the show introduction on camera; caption chunk swaps in sync with the words."
+  },
+  {
+   "t": 6,
+   "frame": "frames/f007.jpg",
+   "visual": {
+    "summary": "Same static talking-head shot, subject's expression neutral mid-sentence. Bottom caption reads \"Adventures, a video\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "web",
+    "adventures,",
+    "a"
+   ],
+   "match": "Visual supports the narration \u2014 speaker still delivering the intro line on camera; caption chunk matches the spoken words."
+  },
+  {
+   "t": 7,
+   "frame": "frames/f008.jpg",
+   "visual": {
+    "summary": "Same talking-head framing and background; subject mid-speech. Bottom caption reads \"series where we\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "a",
+    "video",
+    "series",
+    "where"
+   ],
+   "match": "Visual supports the narration \u2014 continuous talking-head delivery of the series description; caption chunk in sync."
+  },
+  {
+   "t": 8,
+   "frame": "frames/f009.jpg",
+   "visual": {
+    "summary": "Medium close-up of Felix speaking, centered, wearing a black t-shirt and glasses; behind him a pegboard wall covered with VR headsets, blue light on the left side and warm orange light on the right. White caption \"build VR experiences\" across the lower third. No transition \u2014 steady shot.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "where",
+    "we",
+    "build",
+    "VR",
+    "experiences"
+   ],
+   "match": "The visual is a talking-head shot of Felix saying these words; no illustration beyond the speaker himself, n/a for B-roll."
+  },
+  {
+   "t": 9,
+   "frame": "frames/f010.jpg",
+   "visual": {
+    "summary": "Same medium close-up framing \u2014 Felix speaking in front of the headset pegboard wall, blue left / warm right lighting unchanged. White caption \"with AI. For\" across the lower third. No transition \u2014 steady shot.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "experiences",
+    "with",
+    "AI."
+   ],
+   "match": "Talking-head delivery of the narration; visual does not illustrate \"AI\" specifically, n/a."
+  },
+  {
+   "t": 10,
+   "frame": "frames/f011.jpg",
+   "visual": {
+    "summary": "Identical talking-head framing and background (pegboard VR headsets, split blue/orange lighting). Felix's mouth is closed mid-pause. White caption \"with AI. For\" still on screen. No transition \u2014 steady shot.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "AI.",
+    "For"
+   ],
+   "match": "n/a \u2014 brief sentence boundary; visual unchanged from surrounding seconds."
+  },
+  {
+   "t": 11,
+   "frame": "frames/f012.jpg",
+   "visual": {
+    "summary": "Same medium close-up talking head, Felix mid-speech with mouth open; headset pegboard wall and split blue/orange lighting behind. White caption \"season two, we're\" across the lower third. No transition \u2014 steady shot.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "For",
+    "season",
+    "two,",
+    "we're"
+   ],
+   "match": "n/a \u2014 talking-head delivery; visual illustrates nothing beyond the speaker."
+  },
+  {
+   "t": 12,
+   "frame": "frames/f013.jpg",
+   "visual": {
+    "summary": "Medium close-up of a man with glasses in a black t-shirt, facing camera, mouth open mid-speech. Behind him a pegboard wall with VR headsets and controllers, lit blue on the left and orange on the right; a framed photo on the wall at left. White bold caption \"taking one survival\" at bottom. No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "we're",
+    "taking",
+    "one",
+    "survival"
+   ],
+   "match": "Talking head only; the visual doesn't illustrate the narration (no game footage shown yet) \u2014 n/a for illustration, caption matches speech."
+  },
+  {
+   "t": 13,
+   "frame": "frames/f014.jpg",
+   "visual": {
+    "summary": "Same static talking-head shot \u2014 man with glasses, black t-shirt, pegboard wall of VR headsets behind with blue/orange side lighting. Caption now reads \"crafting game from\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "survival",
+    "crafting",
+    "game"
+   ],
+   "match": "Talking head only; visual doesn't illustrate the words. Caption matches speech."
+  },
+  {
+   "t": 14,
+   "frame": "frames/f015.jpg",
+   "visual": {
+    "summary": "Same static talking-head framing; speaker's mouth nearly closed between words. Pegboard wall with headsets, blue light left, orange light right, framed photo at left edge. Caption \"the first idea\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "game",
+    "from",
+    "the",
+    "first",
+    "idea"
+   ],
+   "match": "Talking head only; visual doesn't illustrate the words. Caption matches speech."
+  },
+  {
+   "t": 15,
+   "frame": "frames/f016.jpg",
+   "visual": {
+    "summary": "Same static talking-head shot, speaker mid-speech with mouth open. Identical background: pegboard wall with VR headsets and controllers, blue/orange lighting. Caption \"all the way\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "idea",
+    "all",
+    "the",
+    "way",
+    "to",
+    "release."
+   ],
+   "match": "Talking head only; visual doesn't illustrate the words. Caption matches speech."
+  },
+  {
+   "t": 16,
+   "frame": "frames/f017.jpg",
+   "visual": {
+    "summary": "Talking-head shot of Felix with glasses and black t-shirt, medium close-up, in front of a pegboard wall holding VR headsets, lit blue on the left and warm orange on the right. Burned-in caption reads \"to release. Here's\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "release.",
+    "Here's",
+    "a"
+   ],
+   "match": "neutral \u2014 the narrator on camera, no specific illustration of the words."
+  },
+  {
+   "t": 17,
+   "frame": "frames/f018.jpg",
+   "visual": {
+    "summary": "Hard cut to B-roll screen recording of a ChatGPT chat: user message \"interview me on questions needed to write a game design document for a VR survival crafting game\", assistant questions below, a \"DESIGN DECISION / Progress to automation\" panel on the right, and a small video-call inset bottom-right showing Bela Bohlender. Burned-in caption reads \"at episode one.\".",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "a",
+    "quick",
+    "look",
+    "at",
+    "episode"
+   ],
+   "match": "direct \u2014 the visual is the \"quick look at episode one\", the AI interview being described."
+  },
+  {
+   "t": 18,
+   "frame": "frames/f019.jpg",
+   "visual": {
+    "summary": "Same ChatGPT interview screen recording; the video-call inset has switched from Bela to Felix (glasses, dark background). Burned-in caption still reads \"at episode one.\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "episode",
+    "one."
+   ],
+   "match": "illustrates \u2014 the AI interview screen is the episode-one content being referenced."
+  },
+  {
+   "t": 19,
+   "frame": "frames/f020.jpg",
+   "visual": {
+    "summary": "Same ChatGPT interview screen recording, inset shows Felix gesturing. Burned-in caption changed to \"We started with\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "We",
+    "started"
+   ],
+   "match": "illustrates \u2014 the interview screen is what \"we started with\"."
+  },
+  {
+   "t": 20,
+   "frame": "frames/f021.jpg",
+   "visual": {
+    "summary": "B-roll of an AI interview screen recording \u2014 dark chat interface with a prompt \"interview me on questions needed to write a game design document for a VR survival crafting game,\" a white \"AI interviewing us\" caption overlay, a small video-call thumbnail labeled \"Bela Bohle...\" bottom right, and a right-side panel reading \"DESIGN DECISION / Progress to automation.\" No transition; static screen capture.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "started",
+    "with",
+    "AI",
+    "interviewing"
+   ],
+   "match": "yes \u2014 the visual literally shows the AI interview the narration describes."
+  },
+  {
+   "t": 21,
+   "frame": "frames/f022.jpg",
+   "visual": {
+    "summary": "Same AI interview screen B-roll as T20 \u2014 dark chat UI, \"AI interviewing us\" overlay, Bela's video thumbnail bottom right, \"DESIGN DECISION / Progress to automation\" panel on the right. No transition; static screen capture.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "interviewing",
+    "us",
+    "about",
+    "what",
+    "we"
+   ],
+   "match": "yes \u2014 visual continues to illustrate the AI interview being described."
+  },
+  {
+   "t": 22,
+   "frame": "frames/f023.jpg",
+   "visual": {
+    "summary": "Mid-dissolve transition \u2014 Felix's talking head (pegboard with VR headsets behind him, blue/orange lighting) fading in over the fading AI interview screen; double-exposure look with the \"wanted to build.\" caption at the bottom. Transition in progress (dissolve).",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "we",
+    "wanted",
+    "to",
+    "build."
+   ],
+   "match": "partial \u2014 narration finishes the interview sentence while the visual is already leaving the interview B-roll."
+  },
+  {
+   "t": 23,
+   "frame": "frames/f024.jpg",
+   "visual": {
+    "summary": "Moodboard B-roll \u2014 a \"VR Survival Crafting \u2014 Visual Moodboard\" grid of game concept art tiles (campfires, crafting tables, forest scenes, material swatches) on a light background, with the \"Our answers became\" caption at the bottom. No transition; static board view.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "Our",
+    "answers",
+    "became"
+   ],
+   "match": "yes \u2014 the moodboard on screen is one of the things the narration says the answers became."
+  },
+  {
+   "t": 24,
+   "frame": "frames/f025.jpg",
+   "visual": {
+    "summary": "B-roll cutaway to a \"VR Survival Crafting \u2014 Visual Moodboard\" grid: concept-art tiles showing campfire scenes, crafting UI mockups, campsite renders, material swatches, and a stylized tree, on a light-gray board background. Burned-in caption reads \"a game design,\". No transition in progress \u2014 a clean cut to the B-roll, frame slightly soft.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "became",
+    "a",
+    "game",
+    "design,"
+   ],
+   "match": "yes \u2014 the moodboard grid illustrates the design artifacts the narration describes."
+  },
+  {
+   "t": 25,
+   "frame": "frames/f026.jpg",
+   "visual": {
+    "summary": "Cut back to the talking head \u2014 Felix mid-speech in front of the pegboard wall of VR headsets, blue light on the left and warm orange on the right. Burned-in caption reads \"a mood board,\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "a",
+    "mood",
+    "board,",
+    "and"
+   ],
+   "match": "no \u2014 the visual is the neutral talking head; the moodboard B-roll it refers to already ended a second earlier."
+  },
+  {
+   "t": 26,
+   "frame": "frames/f027.jpg",
+   "visual": {
+    "summary": "B-roll cutaway to a low-poly 3D game scene: a campsite with a wooden workbench/crafting table, a bedroll, a campfire, grass tufts, and stylized trees; board header reads \"VR Survival Crafting \u2014 Visual Moodboard\" and the window title references a campfire checkpoint scene. Burned-in caption reads \"and this first\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "and",
+    "this",
+    "first",
+    "3D"
+   ],
+   "match": "yes \u2014 the 3D campsite directly illustrates \"this first 3D\"."
+  },
+  {
+   "t": 27,
+   "frame": "frames/f028.jpg",
+   "visual": {
+    "summary": "Continuation of the 3D campsite B-roll from a slightly different camera angle: dirt path winding through grass, the workbench on the left, the stone-ringed campfire on the right, trees in the background. Burned-in caption reads \"3D campsite. And\". No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "3D",
+    "campsite."
+   ],
+   "match": "yes \u2014 the 3D campsite directly illustrates \"3D campsite.\""
+  },
+  {
+   "t": 28,
+   "frame": "frames/f029.jpg",
+   "visual": {
+    "summary": "Browser window showing a low-poly 3D campsite scene (wooden workbench with items, dirt path, pine trees, mountains under a blue sky); browser tab reads \"VR Survival Crafting \u2014 Visual Moodboard\" and toolbar text \"GLTF Scene \u2014 Campfire Checkpoint Bounding\". Bottom caption reads \"3D campsite. And\". No transition visible \u2014 static full-screen capture.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "And",
+    "when"
+   ],
+   "match": "Visual directly illustrates the narration \u2014 the 3D campsite is on screen as it is named."
+  },
+  {
+   "t": 29,
+   "frame": "frames/f030.jpg",
+   "visual": {
+    "summary": "Hard cut to a medium close-up talking head: man with glasses in a black t-shirt, seated before a pegboard wall of VR headsets, blue light on the left and warm orange/red light on the right. Bottom caption reads \"is finally ready,\". No transition in progress \u2014 an abrupt cut from the 3D scene.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "when",
+    "the",
+    "game",
+    "is",
+    "finally",
+    "ready,"
+   ],
+   "match": "Speaker on camera delivering the line; visual does not illustrate the words beyond showing the narrator."
+  },
+  {
+   "t": 30,
+   "frame": "frames/f031.jpg",
+   "visual": {
+    "summary": "Same talking-head framing and background as the previous second, unchanged; no caption visible this second (gap between caption chunks). No transition.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "ready,",
+    "you",
+    "get"
+   ],
+   "match": "Speaker on camera; visual does not illustrate the words beyond showing the narrator."
+  },
+  {
+   "t": 31,
+   "frame": "frames/f032.jpg",
+   "visual": {
+    "summary": "Same talking-head framing and background, unchanged; bottom caption reads \"tell us if\". No transition.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "get",
+    "to",
+    "tell",
+    "us",
+    "if"
+   ],
+   "match": "Speaker on camera addressing the viewer directly, matching the direct-address narration (\"tell us\")."
+  },
+  {
+   "t": 32,
+   "frame": "frames/f033.jpg",
+   "visual": {
+    "summary": "Mid cross-dissolve: the talking-head shot (Felix centered, pegboard wall of VR headsets behind him, blue/orange lighting) is fading out while the ending card fades in \u2014 a large semi-transparent \"IWA\" logo and ghosted text lines are overlaid across Felix's face, and the bold caption \"it's any good.\" sits at the bottom. Everything is soft/double-exposed from the transition.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [
+    "if",
+    "it's",
+    "any",
+    "good."
+   ],
+   "match": "n/a \u2014 the frame is a transition between scenes, not illustrating the narration."
+  },
+  {
+   "t": 33,
+   "frame": "frames/f034.jpg",
+   "visual": {
+    "summary": "Ending card fully settled on a solid black background: white \"IWA\" wordmark centered with a blue segmented arc (like a loading spinner) sweeping over the \"A\"; below it \"Immersive Web Adventures \u00b7 S2E1\" in white, and \"Full episode in the comments.\" in blue/purple beneath that. Clean, static, no transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 34,
+   "frame": "frames/f035.jpg",
+   "visual": {
+    "summary": "Identical to the previous second \u2014 the same black ending card with the IWA wordmark, blue arc, \"Immersive Web Adventures \u00b7 S2E1\", and \"Full episode in the comments.\" Static hold, no change, no transition.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 35,
+   "frame": "frames/f036.jpg",
+   "visual": {
+    "summary": "Static ending card on a solid black background. The IWA logo sits in the upper-middle: white \"IWA\" wordmark with a partial blue segmented arc behind the \"A\". Below it, two centered text lines \u2014 \"Immersive Web Adventures \u00b7 S2E1\" in white and \"Full episode in the comments.\" in smaller light-blue text. Both lines fully legible, no transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 36,
+   "frame": "frames/f037.jpg",
+   "visual": {
+    "summary": "Same ending card, unchanged and fully bright \u2014 black background, white/blue IWA logo with blue arc, both text lines crisp and legible. No transition in progress.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  },
+  {
+   "t": 37,
+   "frame": "frames/f038.jpg",
+   "visual": {
+    "summary": "The ending card is mid fade-out \u2014 the logo and both text lines are heavily dimmed, barely visible against the black background (\"IWA\" only faintly discernible). Fade-out to black in progress; the video ends dark.",
+    "subjects": [],
+    "setting": "",
+    "on_screen_text": [],
+    "transition": "unknown",
+    "camera": "unknown"
+   },
+   "narration": [],
+   "match": "n/a."
+  }
+ ]
+}

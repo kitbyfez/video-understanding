@@ -42,12 +42,12 @@
 <div id="timeline"></div>
 <section class="format">
   <h2>The data structure</h2>
-  <p class="sub">One <a href="../examples/iwa-s02e01-trailer-v2/catalog.json">catalog.json</a> record per second (click any card above for its full record):</p>
+  <p class="sub">One <a href="example/catalog.json">catalog.json</a> record per second (click any card above for its full record):</p>
   <pre id="sample"></pre>
 </section>
 <div id="detail"><div class="box"><button class="close" onclick="document.getElementById('detail').classList.remove('open')">Close</button><div id="detailBody"></div></div></div>
 <script>
-const BASE = '../examples/iwa-s02e01-trailer-v2/';
+const BASE = 'example/';
 fetch(BASE + 'catalog.json').then(r => r.json()).then(c => {
   document.getElementById('meta').innerHTML =
     `<b>${c.seconds.length}</b> seconds · <b>${c.transcript.words.length}</b> transcribed words · ` +
