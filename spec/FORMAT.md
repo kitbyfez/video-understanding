@@ -88,3 +88,15 @@ renderings (timelines, Pages demos) are derived views, never the source of truth
 
 Breaking changes bump the number after `video-understanding/`. v1 readers
 must tolerate unknown fields (additive changes don't bump).
+
+## Ledger (additive, v1-compatible)
+
+`vu` tracks workflow state per record. v1 readers tolerate unknown fields, so
+these do not bump the format version:
+
+- `described: bool`, `described_by`, `described_at`
+- `annotated: bool`, `annotation` (free-text review notes), `annotated_by`,
+  `annotated_at`
+
+`narration` is always derived from transcript word overlap at write time,
+never accepted from the writer.

@@ -1,0 +1,656 @@
+#!/usr/bin/env python3
+"""vu - video-understanding CLI.
+
+Machine-readable video understanding for agents. `vu` is the ONLY writer of
+catalog.json (single-writer principle): agents and humans change the catalog
+exclusively through `vu` commands, so every write is schema-validated,
+narration is derived deterministically, and writes are atomic.
+
+Commands:
+  ingest    VIDEO [-o DIR]      transcribe + extract 1fps frames + catalog skeleton
+  status    [DIR]               describe/annotate completeness, missing ranges
+  record    describe|annotate   validated write of one second (or --batch)
+  frame     [DIR] --second N    pull a frame as PNG (thumbnail or full-res)
+  sheet     [DIR] --range A-B   dynamic contact sheet PNG
+  validate  [DIR]               full catalog validation
+  migrate   [DIR]               add v1.1 ledger fields to older catalogs
+
+Layout per video (see spec/FORMAT.md):
+  <DIR>/catalog.json  transcript.json  frames/f001.jpg...  precision/  .vu.json
+"""
+import argparse
+import contextlib
+import datetime
+import fcntl
+import hashlib
+import json
+import math
+import os
+import re
+import shutil
+import subprocess
+import sys
+
+SPEC_FORMAT = "video-understanding/1"
+TRANSITIONS = {"none", "cut", "fade", "dissolve", "wipe", "unknown"}
+CAMERAS = {"static", "pan", "tilt", "zoom", "moving", "unknown"}
+VU_SIDECAR = ".vu.json"
+
+
+def die(msg, code=1):
+    print(f"vu: error: {msg}", file=sys.stderr)
+    sys.exit(code)
+
+
+def utcnow():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
+
+
+# ---------------------------------------------------------------- catalog IO
+@contextlib.contextmanager
+def locked_catalog(cdir, write=False):
+    """Yield (catalog, ) holding an flock on catalog.json; atomic save on write."""
+    path = os.path.join(cdir, "catalog.json")
+    if not os.path.exists(path):
+        die(f"no catalog.json in {cdir} (run `vu ingest` first)")
+    f = open(path, "r+", encoding="utf-8")
+    try:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX if write else fcntl.LOCK_SH)
+        f.seek(0)
+        raw = f.read()
+        catalog = json.loads(raw) if raw.strip() else None
+        if catalog is None:
+            die(f"{path} is empty")
+        yield catalog
+        if write:
+            tmp = f"{path}.tmp.{os.getpid()}"
+            with open(tmp, "w", encoding="utf-8") as tf:
+                json.dump(catalog, tf, ensure_ascii=False, indent=1)
+                tf.write("\n")
+            os.replace(tmp, path)
+    finally:
+        try:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+        except OSError:
+            pass
+        f.close()
+
+
+def read_catalog(cdir):
+    with locked_catalog(cdir) as catalog:
+        return catalog
+
+
+def sidecar(cdir):
+    p = os.path.join(cdir, VU_SIDECAR)
+    if os.path.exists(p):
+        with open(p, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def is_described(rec):
+    if "described" in rec:
+        return bool(rec["described"])
+    v = rec.get("visual") or {}
+    return bool(v.get("summary"))
+
+
+def is_annotated(rec):
+    return bool(rec.get("annotated"))
+
+
+# ------------------------------------------------------------- deterministic
+def derive_narration(words, t):
+    """Words overlapping [t, t+1), in order. Never trusted from workers."""
+    return [w["w"] for w in words if w["start"] < t + 1 and w["end"] > t]
+
+
+def coalesce_ranges(nums):
+    """[1,2,3,7] -> ['1-3','7']"""
+    nums = sorted(set(nums))
+    if not nums:
+        return []
+    out, start, prev = [], nums[0], nums[0]
+    for n in nums[1:]:
+        if n == prev + 1:
+            prev = n
+        else:
+            out.append(str(start) if start == prev else f"{start}-{prev}")
+            start = prev = n
+    out.append(str(start) if start == prev else f"{start}-{prev}")
+    return out
+
+
+def parse_range(s):
+    m = re.fullmatch(r"\s*(\d+)\s*-\s*(\d+)\s*", s)
+    if not m:
+        die(f"bad range {s!r}, expected A-B")
+    a, b = int(m.group(1)), int(m.group(2))
+    if a > b:
+        die(f"bad range {s!r}: start > end")
+    return a, b
+
+
+# ------------------------------------------------------------------ probing
+def probe_video(path):
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=width,height,avg_frame_rate",
+         "-show_entries", "format=duration", "-of", "json", path],
+        capture_output=True, text=True)
+    if r.returncode != 0:
+        die(f"ffprobe failed: {r.stderr.strip()}")
+    info = json.loads(r.stdout)
+    st = info["streams"][0]
+    num, den = st["avg_frame_rate"].split("/")
+    return {
+        "width": int(st["width"]),
+        "height": int(st["height"]),
+        "fps": round(int(num) / int(den), 3),
+        "duration_s": round(float(info["format"]["duration"]), 3),
+    }
+
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def find_whisper_python():
+    try:
+        import faster_whisper  # noqa: F401
+        return sys.executable
+    except ImportError:
+        pass
+    venv = os.path.expanduser("~/workspace/whisper-env/bin/python")
+    if os.path.exists(venv):
+        return venv
+    return None
+
+
+TRANSCRIBE_SCRIPT = r"""
+import glob, json, os, sys
+from faster_whisper import WhisperModel
+
+def resolve_model():
+    # Prefer the local HF snapshot dir: skips faster-whisper's download path
+    # entirely (which trips over this machine's proxy env vars).
+    cands = sorted(glob.glob(os.path.expanduser(
+        "~/.cache/huggingface/hub/models--Systran--faster-whisper-base/snapshots/*/")))
+    for c in cands:
+        if os.path.exists(os.path.join(c, "model.bin")):
+            return c
+    return "base"  # fall back to download path
+
+model = WhisperModel(resolve_model(), device="cpu", compute_type="int8")
+segments, _info = model.transcribe(sys.argv[1], word_timestamps=True)
+words = [{"w": w.word, "start": round(w.start, 2), "end": round(w.end, 2)}
+         for s in segments for w in (s.words or [])]
+json.dump({"engine": "faster-whisper/base", "words": words, "corrections": []},
+          open(sys.argv[2], "w"), ensure_ascii=False)
+print(len(words))
+"""
+
+
+def transcribe(video, out_json, whisper_python=None):
+    py = whisper_python or find_whisper_python()
+    if not py:
+        die("faster-whisper not found (tried current python and "
+            "~/workspace/whisper-env/bin/python); pass --whisper-python")
+    # Scrub proxy vars: this box's proxy URL breaks old httpx URL parsing,
+    # and the model is cached locally anyway -- no network needed.
+    env = {k: v for k, v in os.environ.items() if "proxy" not in k.lower()}
+    env["HF_HUB_OFFLINE"] = "1"
+    r = subprocess.run([py, "-c", TRANSCRIBE_SCRIPT, video, out_json],
+                       capture_output=True, text=True, env=env)
+    if r.returncode != 0:
+        die(f"transcription failed: {r.stderr.strip()[-500:]}")
+    return int(r.stdout.strip() or 0)
+
+# ------------------------------------------------------------------- ingest
+def cmd_ingest(args):
+    video = os.path.abspath(args.video)
+    if not os.path.exists(video):
+        die(f"video not found: {video}")
+    cdir = os.path.abspath(args.out or os.path.splitext(os.path.basename(video))[0])
+    if os.path.exists(os.path.join(cdir, "catalog.json")) and not args.force:
+        die(f"{cdir}/catalog.json exists (use --force to overwrite)")
+    os.makedirs(os.path.join(cdir, "frames"), exist_ok=True)
+    os.makedirs(os.path.join(cdir, "precision"), exist_ok=True)
+
+    print("probing...")
+    meta = probe_video(video)
+    n_sec = math.ceil(meta["duration_s"])
+    print(f"  {meta['width']}x{meta['height']} @ {meta['fps']}fps, "
+          f"{meta['duration_s']}s -> {n_sec} seconds")
+
+    print("hashing...")
+    digest = sha256_file(video)
+
+    transcript_path = os.path.join(cdir, "transcript.json")
+    if args.skip_transcribe:
+        transcript = {"engine": "skipped", "words": [], "corrections": []}
+        with open(transcript_path, "w", encoding="utf-8") as f:
+            json.dump(transcript, f, ensure_ascii=False, indent=1)
+        print("  transcription skipped")
+    else:
+        print("transcribing (faster-whisper/base, word timestamps)...")
+        n_words = transcribe(video, transcript_path, args.whisper_python)
+        with open(transcript_path, encoding="utf-8") as f:
+            transcript = json.load(f)
+        print(f"  {n_words} words -> transcript.json")
+
+    print(f"extracting 1fps frames ({args.thumb})...")
+    tw, th = args.thumb.split("x")
+    r = subprocess.run(
+        ["ffmpeg", "-y", "-v", "error", "-i", video, "-vf",
+         f"fps=1,scale={tw}:{th}", os.path.join(cdir, "frames", "f%03d.jpg")])
+    if r.returncode != 0:
+        die("frame extraction failed")
+    got = len([f for f in os.listdir(os.path.join(cdir, "frames"))
+               if f.endswith(".jpg")])
+    print(f"  {got} frames (f001.jpg = second 0)")
+    if got != n_sec:
+        print(f"  warning: expected {n_sec} frames, got {got}")
+
+    words = transcript["words"]
+    catalog = {
+        "format": SPEC_FORMAT,
+        "video": {
+            "id": args.id or os.path.splitext(os.path.basename(video))[0],
+            "source_file": os.path.basename(video),
+            "sha256": digest,
+            "duration_s": meta["duration_s"],
+            "fps": meta["fps"],
+            "width": meta["width"],
+            "height": meta["height"],
+            "analyzed_at": datetime.date.today().isoformat(),
+        },
+        "transcript": transcript,
+        "seconds": [
+            {
+                "t": t,
+                "frame": f"frames/f{t + 1:03d}.jpg",
+                "visual": None,
+                "narration": derive_narration(words, t),
+                "match": None,
+                "described": False,
+                "annotated": False,
+            }
+            for t in range(n_sec)
+        ],
+    }
+    with open(os.path.join(cdir, "catalog.json"), "w", encoding="utf-8") as f:
+        json.dump(catalog, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    with open(os.path.join(cdir, VU_SIDECAR), "w", encoding="utf-8") as f:
+        json.dump({"source_path": video, "thumb": args.thumb, "fps": 1},
+                  f, indent=1)
+    print(f"done -> {cdir}/ (catalog skeleton, narration derived, "
+          f"0/{n_sec} described)")
+
+
+# ------------------------------------------------------------------- status
+def cmd_status(args):
+    catalog = read_catalog(args.dir)
+    secs = catalog["seconds"]
+    n = len(secs)
+    missing_d = [s["t"] for s in secs if not is_described(s)]
+    missing_a = [s["t"] for s in secs if not is_annotated(s)]
+    if args.json:
+        print(json.dumps({
+            "id": catalog["video"]["id"],
+            "seconds": n,
+            "described": n - len(missing_d),
+            "annotated": n - len(missing_a),
+            "missing_describe": missing_d,
+            "missing_annotate": missing_a,
+            "missing_describe_ranges": coalesce_ranges(missing_d),
+            "missing_annotate_ranges": coalesce_ranges(missing_a),
+        }, indent=1))
+        return
+    vid = catalog["video"]["id"]
+    print(f"{vid}: {n} seconds")
+    d_done, a_done = n - len(missing_d), n - len(missing_a)
+    print(f"  described: {d_done}/{n}" +
+          ("" if not missing_d else
+           f"  (missing {len(missing_d)}: {', '.join(coalesce_ranges(missing_d))})"))
+    print(f"  annotated: {a_done}/{n}" +
+          ("" if not missing_a else
+           f"  (missing {len(missing_a)}: {', '.join(coalesce_ranges(missing_a))})"))
+    if args.missing == "describe" and missing_d:
+        print(",".join(coalesce_ranges(missing_d)))
+    elif args.missing == "annotate" and missing_a:
+        print(",".join(coalesce_ranges(missing_a)))
+
+
+# ----------------------------------------------------------------- validate
+def cmd_validate(args):
+    catalog = read_catalog(args.dir)
+    cdir = args.dir
+    errors, warnings = [], []
+
+    if catalog.get("format") != SPEC_FORMAT:
+        errors.append(f"format is {catalog.get('format')!r}, expected {SPEC_FORMAT!r}")
+    v = catalog.get("video", {})
+    for k in ("id", "sha256", "duration_s"):
+        if k not in v:
+            errors.append(f"video.{k} missing")
+    secs = catalog.get("seconds", [])
+    expect = math.ceil(v.get("duration_s", 0)) if v.get("duration_s") else len(secs)
+    if len(secs) != expect:
+        errors.append(f"{len(secs)} second records, expected {expect}")
+    seen = set()
+    words = catalog.get("transcript", {}).get("words", [])
+    for s in secs:
+        t = s.get("t")
+        if t in seen:
+            errors.append(f"duplicate t={t}")
+        seen.add(t)
+        fp = os.path.join(cdir, s.get("frame", ""))
+        if not os.path.exists(fp):
+            errors.append(f"t={t}: frame missing: {s.get('frame')}")
+        if is_described(s):
+            vis = s.get("visual") or {}
+            if not vis.get("summary"):
+                errors.append(f"t={t}: described but visual.summary empty")
+            if vis.get("transition") not in TRANSITIONS:
+                errors.append(f"t={t}: bad transition {vis.get('transition')!r}")
+            if vis.get("camera") not in CAMERAS:
+                errors.append(f"t={t}: bad camera {vis.get('camera')!r}")
+        if derive_narration(words, t) != s.get("narration", []):
+            warnings.append(f"t={t}: narration differs from derived word overlap")
+    if seen != set(range(len(secs))):
+        errors.append("t values are not a gapless 0..n-1 sequence")
+
+    for w in warnings:
+        print(f"warn: {w}")
+    if errors:
+        print(f"{len(errors)} error(s):")
+        for e in errors[:30]:
+            print(f"  - {e}")
+        sys.exit(1)
+    print(f"valid: {len(secs)} seconds, {len(warnings)} warning(s)")
+
+
+# ------------------------------------------------------------------ migrate
+def cmd_migrate(args):
+    """Add v1.1 ledger fields (described/annotated) to older catalogs."""
+    with locked_catalog(args.dir, write=True) as catalog:
+        n = 0
+        for s in catalog["seconds"]:
+            if "described" not in s:
+                v = s.get("visual") or {}
+                s["described"] = bool(v.get("summary"))
+                if s["described"]:
+                    s["described_by"] = "migrate"
+                    s["described_at"] = utcnow()
+                n += 1
+            if "annotated" not in s:
+                s["annotated"] = False
+                n += 1
+    print(f"migrated {n} field(s) in {args.dir}")
+
+# ------------------------------------------------------------------- record
+def _check_second(catalog, cdir, t):
+    if not (0 <= t < len(catalog["seconds"])):
+        die(f"second {t} out of range [0, {len(catalog['seconds'])})")
+    rec = catalog["seconds"][t]
+    if rec["t"] != t:
+        die(f"record mismatch at index {t}")
+    fp = os.path.join(cdir, rec.get("frame", ""))
+    if not os.path.exists(fp):
+        die(f"frame file missing for t={t}: {rec.get('frame')}")
+    return rec
+
+
+def _apply_describe(rec, d, by, words):
+    vis = d.get("visual", d)
+    summary = (vis.get("summary") or "").strip()
+    match = (d.get("match") or "").strip()
+    if not summary:
+        die("visual.summary is required")
+    if not match:
+        die("match is required")
+    transition = vis.get("transition", "unknown")
+    camera = vis.get("camera", "unknown")
+    if transition not in TRANSITIONS:
+        die(f"bad transition {transition!r} (allowed: {sorted(TRANSITIONS)})")
+    if camera not in CAMERAS:
+        die(f"bad camera {camera!r} (allowed: {sorted(CAMERAS)})")
+    rec["visual"] = {
+        "summary": summary,
+        "subjects": list(vis.get("subjects") or []),
+        "setting": vis.get("setting") or "",
+        "on_screen_text": list(vis.get("on_screen_text") or []),
+        "transition": transition,
+        "camera": camera,
+    }
+    rec["match"] = match
+    # narration is DERIVED, never accepted from the writer
+    rec["narration"] = derive_narration(words, rec["t"])
+    rec["described"] = True
+    rec["described_by"] = by
+    rec["described_at"] = utcnow()
+
+
+def cmd_record_describe(args):
+    by = args.by or os.environ.get("USER", "agent")
+    items = []
+    if args.batch:
+        with open(args.batch, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict) and "records" in data:
+            data = data["records"]
+        items = data
+    else:
+        if args.second is None:
+            die("--second N or --batch FILE is required")
+        items = [{
+            "second": args.second,
+            "summary": args.summary,
+            "subjects": args.subjects.split(",") if args.subjects else [],
+            "setting": args.setting or "",
+            "on_screen_text": args.on_screen_text.split("|") if args.on_screen_text else [],
+            "transition": args.transition,
+            "camera": args.camera,
+            "match": args.match,
+        }]
+    done, skipped = 0, 0
+    with locked_catalog(args.dir, write=True) as catalog:
+        words = catalog.get("transcript", {}).get("words", [])
+        for d in items:
+            t = int(d["second"])
+            rec = _check_second(catalog, args.dir, t)
+            if is_described(rec) and not args.force:
+                skipped += 1
+                continue
+            _apply_describe(rec, d, by, words)
+            done += 1
+    print(f"described {done}, skipped {skipped} (already described, use --force)")
+
+
+def cmd_record_annotate(args):
+    by = args.by or os.environ.get("USER", "agent")
+    with locked_catalog(args.dir, write=True) as catalog:
+        rec = _check_second(catalog, args.dir, args.second)
+        if args.clear:
+            rec["annotated"] = False
+            rec.pop("annotation", None)
+            rec.pop("annotated_by", None)
+            rec.pop("annotated_at", None)
+            print(f"t={args.second}: annotation cleared")
+        else:
+            if not args.notes:
+                die("--notes TEXT is required (or --clear)")
+            rec["annotated"] = True
+            rec["annotation"] = args.notes
+            rec["annotated_by"] = by
+            rec["annotated_at"] = utcnow()
+            print(f"t={args.second}: annotated")
+
+
+# -------------------------------------------------------------------- frame
+def resolve_video(cdir, override=None):
+    if override:
+        return os.path.abspath(override)
+    sc = sidecar(cdir)
+    if sc.get("source_path") and os.path.exists(sc["source_path"]):
+        return sc["source_path"]
+    die(f"source video not found (sidecar points at {sc.get('source_path')!r}); "
+        f"pass --video PATH")
+
+
+def cmd_frame(args):
+    catalog = read_catalog(args.dir)
+    rec = _check_second(catalog, args.dir, args.second)
+    out = args.out or f"frame-t{args.second}.png"
+    if args.full:
+        video = resolve_video(args.dir, args.video)
+        r = subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-ss", str(args.second),
+             "-i", video, "-frames:v", "1", out])
+        if r.returncode != 0:
+            die("frame extraction failed")
+    else:
+        src = os.path.join(args.dir, rec["frame"])
+        if out != src:
+            # convert thumbnail jpg -> png (deliverable format)
+            r = subprocess.run(
+                ["ffmpeg", "-y", "-v", "error", "-i", src, out])
+            if r.returncode != 0:
+                die("conversion failed")
+            print(out)
+            return
+        print(src)
+        return
+    print(out)
+
+
+# -------------------------------------------------------------------- sheet
+def cmd_sheet(args):
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        die("contact sheets need Pillow: pip install pillow")
+    a, b = parse_range(args.range)
+    catalog = read_catalog(args.dir)
+    thumbs = []
+    for t in range(a, b + 1):
+        rec = _check_second(catalog, args.dir, t)
+        src = rec["frame"]
+        if args.full:
+            tmp = f"/tmp/vu-sheet-{t}.png"
+            video = resolve_video(args.dir, args.video)
+            subprocess.run(
+                ["ffmpeg", "-y", "-v", "error", "-ss", str(t),
+                 "-i", video, "-frames:v", "1",
+                 "-vf", "scale=480:-1", tmp], check=True)
+            src = tmp
+        else:
+            src = os.path.join(args.dir, src)
+        thumbs.append((t, Image.open(src).convert("RGB")))
+    cols = args.cols
+    rows = math.ceil(len(thumbs) / cols)
+    tw, th = thumbs[0][1].size
+    label_h = 22 if args.labels else 0
+    sheet = Image.new("RGB", (cols * tw, rows * (th + label_h)), "black")
+    d = ImageDraw.Draw(sheet)
+    for i, (t, im) in enumerate(thumbs):
+        x, y = (i % cols) * tw, (i // cols) * (th + label_h)
+        sheet.paste(im, (x, y))
+        if args.labels:
+            d.text((x + 6, y + th + 4), f"t={t}", fill="white")
+    out = args.out or f"sheet-{a}-{b}.png"
+    sheet.save(out)
+    print(f"{out} ({cols}x{rows}, t={a}-{b})")
+
+
+# --------------------------------------------------------------------- main
+def build_parser():
+    p = argparse.ArgumentParser(prog="vu",
+                                description="video-understanding CLI (single writer of catalog.json)")
+    sub = p.add_subparsers(dest="cmd", required=True)
+
+    g = sub.add_parser("ingest", help="transcribe + extract frames + catalog skeleton")
+    g.add_argument("video")
+    g.add_argument("-o", "--out", default=None)
+    g.add_argument("--id", default=None)
+    g.add_argument("--thumb", default="480x270")
+    g.add_argument("--skip-transcribe", action="store_true")
+    g.add_argument("--whisper-python", default=None)
+    g.add_argument("--force", action="store_true")
+    g.set_defaults(func=cmd_ingest)
+
+    g = sub.add_parser("status", help="describe/annotate completeness")
+    g.add_argument("dir", nargs="?", default=".")
+    g.add_argument("--missing", choices=["describe", "annotate"], default=None)
+    g.add_argument("--json", action="store_true")
+    g.set_defaults(func=cmd_status)
+
+    g = sub.add_parser("record", help="validated write of one second")
+    rs = g.add_subparsers(dest="rcmd", required=True)
+    d = rs.add_parser("describe", help="write visual+match for a second")
+    d.add_argument("dir", nargs="?", default=".")
+    d.add_argument("--second", type=int, default=None)
+    d.add_argument("--summary", default=None)
+    d.add_argument("--subjects", default=None, help="comma-separated")
+    d.add_argument("--setting", default=None)
+    d.add_argument("--on-screen-text", default=None, help="|-separated")
+    d.add_argument("--transition", default="unknown")
+    d.add_argument("--camera", default="unknown")
+    d.add_argument("--match", default=None)
+    d.add_argument("--batch", default=None, help="JSON array of records")
+    d.add_argument("--force", action="store_true")
+    d.add_argument("--by", default=None)
+    d.set_defaults(func=cmd_record_describe)
+    an = rs.add_parser("annotate", help="attach review notes to a second")
+    an.add_argument("dir", nargs="?", default=".")
+    an.add_argument("--second", type=int, required=True)
+    an.add_argument("--notes", default=None)
+    an.add_argument("--clear", action="store_true")
+    an.add_argument("--by", default=None)
+    an.set_defaults(func=cmd_record_annotate)
+
+    g = sub.add_parser("frame", help="pull a frame as PNG")
+    g.add_argument("dir", nargs="?", default=".")
+    g.add_argument("--second", type=int, required=True)
+    g.add_argument("--full", action="store_true", help="native resolution")
+    g.add_argument("--video", default=None)
+    g.add_argument("-o", "--out", default=None)
+    g.set_defaults(func=cmd_frame)
+
+    g = sub.add_parser("sheet", help="dynamic contact sheet PNG for a range")
+    g.add_argument("dir", nargs="?", default=".")
+    g.add_argument("--range", required=True, help="A-B, e.g. 537-551")
+    g.add_argument("--cols", type=int, default=4)
+    g.add_argument("--full", action="store_true")
+    g.add_argument("--labels", action="store_true", default=True)
+    g.add_argument("--no-labels", dest="labels", action="store_false")
+    g.add_argument("--video", default=None)
+    g.add_argument("-o", "--out", default=None)
+    g.set_defaults(func=cmd_sheet)
+
+    g = sub.add_parser("validate", help="full catalog validation")
+    g.add_argument("dir", nargs="?", default=".")
+    g.set_defaults(func=cmd_validate)
+
+    g = sub.add_parser("migrate", help="add v1.1 ledger fields to older catalogs")
+    g.add_argument("dir", nargs="?", default=".")
+    g.set_defaults(func=cmd_migrate)
+    return p
+
+
+def main():
+    args = build_parser().parse_args()
+    if hasattr(args, "dir"):
+        args.dir = os.path.abspath(args.dir)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()
