@@ -196,6 +196,14 @@ print(len(words))
 """
 
 
+def has_audio_stream(path):
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "a:0",
+         "-show_entries", "stream=index", "-of", "csv=p=0", path],
+        capture_output=True, text=True)
+    return r.returncode == 0 and r.stdout.strip() != ""
+
+
 def transcribe(video, out_json, whisper_python=None):
     py = whisper_python or find_whisper_python()
     if not py:
@@ -239,10 +247,17 @@ def cmd_ingest(args):
         print("  transcription skipped")
     else:
         print("transcribing (faster-whisper/base, word timestamps)...")
-        n_words = transcribe(video, transcript_path, args.whisper_python)
-        with open(transcript_path, encoding="utf-8") as f:
-            transcript = json.load(f)
-        print(f"  {n_words} words -> transcript.json")
+        if has_audio_stream(video):
+            n_words = transcribe(video, transcript_path, args.whisper_python)
+            with open(transcript_path, encoding="utf-8") as f:
+                transcript = json.load(f)
+            print(f"  {n_words} words -> transcript.json")
+        else:
+            transcript = {"engine": "no-audio-stream", "words": [],
+                          "corrections": []}
+            with open(transcript_path, "w", encoding="utf-8") as f:
+                json.dump(transcript, f, ensure_ascii=False, indent=1)
+            print("  no audio stream -> empty transcript")
 
     print(f"extracting 1fps frames ({args.thumb})...")
     tw, th = args.thumb.split("x")
@@ -256,6 +271,21 @@ def cmd_ingest(args):
     print(f"  {got} frames (f001.jpg = second 0)")
     if got != n_sec:
         print(f"  warning: expected {n_sec} frames, got {got}")
+    # Gap-fill: fps=1 can drop the final partial second. Seek-extract any
+    # missing per-second frame so every catalog record has a frame.
+    missing = [t for t in range(n_sec)
+               if not os.path.exists(
+                   os.path.join(cdir, "frames", f"f{t + 1:03d}.jpg"))]
+    for t in missing:
+        r = subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-ss", str(t), "-i", video,
+             "-frames:v", "1",
+             os.path.join(cdir, "frames", f"f{t + 1:03d}.jpg")],
+            capture_output=True, text=True)
+        if r.returncode != 0 or not os.path.exists(
+                os.path.join(cdir, "frames", f"f{t + 1:03d}.jpg")):
+            die(f"gap-fill frame extraction failed for t={t}")
+        print(f"  gap-filled frame for t={t}")
 
     words = transcript["words"]
     catalog = {
@@ -570,6 +600,61 @@ def cmd_sheet(args):
     print(f"{out} ({cols}x{rows}, t={a}-{b})")
 
 
+# ------------------------------------------------------- transcript correct
+def cmd_transcript_correct(args):
+    """Apply word-level STT corrections (remove hallucinations, fix words).
+
+    Edits file: {"edits": [{"op": "remove"|"replace", "word": " You",
+      "to": " Bela", "start": 2.72, "reason": "..."}]}
+    Updates transcript.json AND the catalog's embedded transcript, recomputes
+    derived narration for every second, and logs each edit in corrections[].
+    """
+    by = args.by or os.environ.get("USER", "agent")
+    with open(args.edits, encoding="utf-8") as f:
+        edits = json.load(f).get("edits", [])
+    if not edits:
+        die("no edits in file")
+    with locked_catalog(args.dir, write=True) as catalog:
+        tpath = os.path.join(args.dir, "transcript.json")
+        with open(tpath, encoding="utf-8") as f:
+            tdata = json.load(f)
+        words = tdata.get("words", [])
+        n_applied = 0
+        for e in edits:
+            op = e.get("op")
+            if op not in ("remove", "replace"):
+                die(f"bad op {op!r} (allowed: remove, replace)")
+            cands = [w for w in words if w.get("w") == e["word"]
+                     and (e.get("start") is None
+                          or abs(w.get("start", -1) - e["start"]) < 0.02)]
+            if not cands:
+                die(f"no word matching {e['word']!r}"
+                    + (f" at {e['start']}" if e.get("start") is not None
+                       else ""))
+            for w in cands:
+                entry = {"op": op, "word": w["w"], "start": w["start"],
+                         "end": w["end"], "reason": e.get("reason", ""),
+                         "by": by, "at": utcnow()}
+                if op == "replace":
+                    if "to" not in e:
+                        die("replace op needs 'to'")
+                    w["w"] = e["to"]
+                    entry["to"] = e["to"]
+                else:
+                    w["_drop"] = True
+                tdata.setdefault("corrections", []).append(entry)
+                n_applied += 1
+        words = [w for w in words if not w.pop("_drop", False)]
+        tdata["words"] = words
+        with open(tpath, "w", encoding="utf-8") as f:
+            json.dump(tdata, f, ensure_ascii=False, indent=1)
+            f.write("\n")
+        catalog["transcript"] = tdata
+        for s in catalog["seconds"]:
+            s["narration"] = derive_narration(words, s["t"])
+    print(f"applied {n_applied} correction(s) in {args.dir}")
+
+
 # --------------------------------------------------------------------- main
 def build_parser():
     p = argparse.ArgumentParser(prog="vu",
@@ -634,6 +719,14 @@ def build_parser():
     g.add_argument("--video", default=None)
     g.add_argument("-o", "--out", default=None)
     g.set_defaults(func=cmd_sheet)
+
+    g = sub.add_parser("transcript", help="word-level transcript fixes")
+    ts = g.add_subparsers(dest="tcmd", required=True)
+    tc = ts.add_parser("correct", help="apply STT corrections from a JSON edits file")
+    tc.add_argument("dir", nargs="?", default=".")
+    tc.add_argument("--edits", required=True, help="JSON file with {edits: [...]}")
+    tc.add_argument("--by", default=None)
+    tc.set_defaults(func=cmd_transcript_correct)
 
     g = sub.add_parser("validate", help="full catalog validation")
     g.add_argument("dir", nargs="?", default=".")

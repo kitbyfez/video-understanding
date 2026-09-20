@@ -34,9 +34,17 @@ from transcript word overlap, and writes are atomic (flock + temp + rename).
   visual + match for one second (or many); skips already-described unless
   `--force`
 - `vu record annotate --second N --notes ...` — attach review notes
+- `vu transcript correct --edits FILE` — word-level STT fixes (remove
+  hallucinations, fix proper nouns); updates transcript.json and the
+  catalog's embedded transcript, recomputes derived narration, logs to
+  corrections[]
 - `vu frame --second N` / `vu sheet --range A-B --cols 4` — PNG evidence,
   generated on demand (never pre-baked)
 - `vu validate` / `vu migrate`
+
+Silent clips (no audio stream) ingest with an empty transcript instead of
+failing; any per-second frame the `fps=1` pass drops (e.g. a trailing
+partial second) is gap-filled by seek-extraction so every record has a frame.
 
 Python 3, stdlib-only (Pillow needed only for contact sheets). Requires
 `ffmpeg`/`ffprobe`; transcription uses faster-whisper (auto-detects
