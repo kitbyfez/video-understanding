@@ -1,0 +1,487 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-02-stirring",
+  "source_file": "02-stirring.mp4",
+  "sha256": "c7f34897b61ebd689d4fdd1896387272693c3620bc0ec28a5b816e4ea0dbaa39",
+  "duration_s": 15.8,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view of the campsite centered on the cooking pot hanging over the campfire; steam begins to rise. The HUD shows Ingredients 2/2 and Stir 0%, and the journal panel on the right shows the 'Cook' task with a stir progress readout.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the start of the named interaction: the pot is over the fire and the stir counter is at 0%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Same view of the pot over the campfire with steam rising; the stew inside the pot is still dark. The HUD still reads Stir 0%.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction just beginning; the stir counter is still 0%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Same view; the pot continues steaming over the campfire. The HUD stir counter remains at 0% as stirring begins.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction underway; the stir counter is still 0%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Same view of the steaming pot; the HUD stir counter ticks up to 1%, the first measurable stirring progress.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 1% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 0% → 1%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "Same view; the pot steams over the campfire and the HUD holds at Stir 1% while stirring continues.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 1% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing; the stir counter holds at 1%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 5,
+   "frame": "frames/f006.jpg",
+   "visual": {
+    "summary": "Same view; the stew surface in the pot begins to lighten as stirring continues, and the HUD stir counter still reads 1%.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 1% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing; the stew surface is visibly changing while the counter reads 1%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 6,
+   "frame": "frames/f007.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter jumps to 14% as the player stirs. The stew in the pot is turning orange-red.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 14% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 1% → 14% and the stew color changes.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 7,
+   "frame": "frames/f008.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 28% and the stew surface is now a bright orange-red with steam rising.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 28% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 14% → 28%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 8,
+   "frame": "frames/f009.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 42% with the bubbling orange stew and steady steam over the campfire.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 42% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 28% → 42%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 9,
+   "frame": "frames/f010.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 54% as stirring continues over the campfire.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 54% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 42% → 54%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 10,
+   "frame": "frames/f011.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 68% and the stew is a fully bright orange-red with strong steam.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 68% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 54% → 68%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 11,
+   "frame": "frames/f012.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 82% as the player keeps stirring the pot over the campfire.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 82% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction progressing: the stir counter advances 68% → 82%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 12,
+   "frame": "frames/f013.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter climbs to 96%, nearly done, with the finished-looking stew steaming over the fire.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 96% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction nearly complete: the stir counter advances 82% → 96%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 13,
+   "frame": "frames/f014.jpg",
+   "visual": {
+    "summary": "Same view; the HUD stir counter reaches 100%, completing the stirring interaction. The stew is fully cooked and steaming.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction completing: the stir counter advances 96% → 100%.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 14,
+   "frame": "frames/f015.jpg",
+   "visual": {
+    "summary": "Same view with the HUD holding at Stir 100%. The finished stew steams over the campfire as the scene begins to darken.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "steam",
+     "stew",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing, dimming.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "Cook",
+     "Move the spoon",
+     "Make a torch"
+    ],
+    "transition": "fade",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named interaction is complete; the scene starts fading to black.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 15,
+   "frame": "frames/f016.jpg",
+   "visual": {
+    "summary": "The frame is fully black, the scene having faded out; the bottom HUD strip with Ingredients 2/2 · Stir 100% and the banner text remain overlaid at the edges.",
+    "subjects": [
+     "black frame"
+    ],
+    "setting": "Fade to black at end of clip.",
+    "on_screen_text": [
+     "02 · Stir the pot — movement is required",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "fade",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Fade-out ending the stir interaction segment.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  }
+ ]
+}

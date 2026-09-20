@@ -1,0 +1,257 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-03-eating",
+  "source_file": "03-eating.mp4",
+  "sha256": "4372e3efddbdcc5a5c925809528ec4fcc9ecd0fcb23c6cac60b0627f24339902",
+  "duration_s": 8.833,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view of the workbench with a bowl of finished stew sitting on it; the cooking pot hangs on the tripod over the campfire to the left. The HUD shows Stir 100% and Nourishment 65/100.",
+    "subjects": [
+     "stew bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The bowl of stew is on the workbench, ready for the named eating interaction.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Same view; the stew bowl remains on the workbench and the pot steams over the campfire. The HUD still reads Nourishment 65/100.",
+    "subjects": [
+     "stew bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named eating interaction has not started yet; Nourishment is still 65/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Same view of the workbench and campfire; the stew bowl sits untouched and the HUD still shows Nourishment 65/100.",
+    "subjects": [
+     "stew bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named eating interaction has not started yet; Nourishment is still 65/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Same view; the stew bowl is still on the workbench with the HUD at Nourishment 65/100, just before the player picks it up.",
+    "subjects": [
+     "stew bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named eating interaction is about to begin; Nourishment is still 65/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "The stew bowl is lifted toward the camera in a close-up: the reddish stew with white and red chunks fills the frame as the player raises it to eat. The campfire and forest are visible at the edges.",
+    "subjects": [
+     "stew bowl",
+     "stew",
+     "campfire"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; close-up of the raised bowl.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction underway: the player lifts the stew bowl toward their face to eat.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 5,
+   "frame": "frames/f006.jpg",
+   "visual": {
+    "summary": "Extreme close-up of the inside of the bowl as the player eats: the bowl is nearly empty, showing only browned interior with faint traces of stew. The HUD Nourishment counter jumps to 100/100.",
+    "subjects": [
+     "empty bowl"
+    ],
+    "setting": "Extreme close-up of the bowl interior while eating.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 100/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction completing: the bowl is emptied and Nourishment advances 65/100 → 100/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 6,
+   "frame": "frames/f007.jpg",
+   "visual": {
+    "summary": "The view returns to the workbench; the now-empty bowl sits back on the bench beside the other items. The HUD holds at Nourishment 100/100.",
+    "subjects": [
+     "empty bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 100/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction finished: the empty bowl is lowered back onto the workbench with Nourishment at 100/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 7,
+   "frame": "frames/f008.jpg",
+   "visual": {
+    "summary": "Same view of the workbench with the empty bowl resting on it and the pot steaming over the campfire. The HUD still reads Nourishment 100/100.",
+    "subjects": [
+     "empty bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 100/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named interaction is complete; the scene holds steady with Nourishment at 100/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  },
+  {
+   "t": 8,
+   "frame": "frames/f009.jpg",
+   "visual": {
+    "summary": "Same view; the empty bowl remains on the workbench and the campfire burns under the pot. The HUD holds at Nourishment 100/100 as the clip ends.",
+    "subjects": [
+     "empty bowl",
+     "workbench",
+     "cooking pot",
+     "campfire",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "03 · Eat the stew, then lower the empty bowl",
+     "Ingredients 2/2 · Stir 100% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 100/100"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The named interaction is complete; the clip ends with the empty bowl lowered and Nourishment at 100/100.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:54+00:00"
+  }
+ ]
+}

@@ -1,0 +1,264 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "branding-iwa-intro-and-disclaimer-v3",
+  "source_file": "IWA-Intro-and-Disclaimer-v3.mp4",
+  "sha256": "e13e6c6869d924bbc671d974d935811175c227bdb938e17081347b04c4a5be18",
+  "duration_s": 8.1,
+  "fps": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "faster-whisper/base",
+  "words": [],
+  "corrections": [
+   {
+    "op": "remove",
+    "word": " You",
+    "start": 2.72,
+    "end": 4.12,
+    "reason": "whisper hallucination on music-only logo animation; no speech present",
+    "by": "kit",
+    "at": "2026-09-20T23:31:21+00:00"
+   }
+  ]
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "A single white vertical stroke, the stem of the letter I, draws in on a black background: the opening beat of the IWA logo animation.",
+    "subjects": [
+     "IWA logo (partial)"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo draw-on animation plays over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "The IWA logotype appears as a thin white outline, with a small blue arc segment forming above the upper right of the A.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo draw-on animation plays over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "The logo fills solid white with a blue segmented arc sweeping over the A; beneath it read 'Immersive Web Adventures' and 'iwa.dev'.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo resolves over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Hard cut to the disclaimer card: header with the IWA logo, 'Immersive Web Adventures' and 'iwa.dev'; left column a warning-triangle icon over 'Disclaimer' with 'Personal views. Independent voices.'; right column the full personal-opinions disclaimer paragraph; footer 'IMMERSIVE WEB ADVENTURES · IWA.DEV'.",
+    "subjects": [],
+    "setting": "disclaimer title card on dark background",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev",
+     "Disclaimer",
+     "Personal views.",
+     "Independent voices.",
+     "The views expressed in this video are our personal opinions only.",
+     "We are speaking as individuals, not on behalf of our respective employers, clients, affiliates, or any organizations we are associated with.",
+     "Nothing here should be interpreted as an official statement, endorsement, company position, or disclosure of confidential or proprietary information.",
+     "IMMERSIVE WEB ADVENTURES · IWA.DEV"
+    ],
+    "transition": "cut",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the disclaimer card is held over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "The disclaimer card holds static: IWA header, warning-triangle 'Disclaimer' heading with 'Personal views. Independent voices.', and the full personal-opinions paragraph.",
+    "subjects": [],
+    "setting": "disclaimer title card on dark background",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev",
+     "Disclaimer",
+     "Personal views.",
+     "Independent voices.",
+     "The views expressed in this video are our personal opinions only.",
+     "We are speaking as individuals, not on behalf of our respective employers, clients, affiliates, or any organizations we are associated with.",
+     "Nothing here should be interpreted as an official statement, endorsement, company position, or disclosure of confidential or proprietary information.",
+     "IMMERSIVE WEB ADVENTURES · IWA.DEV"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the disclaimer card is held over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 5,
+   "frame": "frames/f006.jpg",
+   "visual": {
+    "summary": "The disclaimer card holds static, unchanged from the previous second.",
+    "subjects": [],
+    "setting": "disclaimer title card on dark background",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev",
+     "Disclaimer",
+     "Personal views.",
+     "Independent voices.",
+     "The views expressed in this video are our personal opinions only.",
+     "We are speaking as individuals, not on behalf of our respective employers, clients, affiliates, or any organizations we are associated with.",
+     "Nothing here should be interpreted as an official statement, endorsement, company position, or disclosure of confidential or proprietary information.",
+     "IMMERSIVE WEB ADVENTURES · IWA.DEV"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the disclaimer card is held over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 6,
+   "frame": "frames/f007.jpg",
+   "visual": {
+    "summary": "The disclaimer card holds static, unchanged.",
+    "subjects": [],
+    "setting": "disclaimer title card on dark background",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev",
+     "Disclaimer",
+     "Personal views.",
+     "Independent voices.",
+     "The views expressed in this video are our personal opinions only.",
+     "We are speaking as individuals, not on behalf of our respective employers, clients, affiliates, or any organizations we are associated with.",
+     "Nothing here should be interpreted as an official statement, endorsement, company position, or disclosure of confidential or proprietary information.",
+     "IMMERSIVE WEB ADVENTURES · IWA.DEV"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the disclaimer card is held over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 7,
+   "frame": "frames/f008.jpg",
+   "visual": {
+    "summary": "The disclaimer card holds static, unchanged.",
+    "subjects": [],
+    "setting": "disclaimer title card on dark background",
+    "on_screen_text": [
+     "IWA",
+     "Immersive Web Adventures",
+     "iwa.dev",
+     "Disclaimer",
+     "Personal views.",
+     "Independent voices.",
+     "The views expressed in this video are our personal opinions only.",
+     "We are speaking as individuals, not on behalf of our respective employers, clients, affiliates, or any organizations we are associated with.",
+     "Nothing here should be interpreted as an official statement, endorsement, company position, or disclosure of confidential or proprietary information.",
+     "IMMERSIVE WEB ADVENTURES · IWA.DEV"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the disclaimer card is held over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  },
+  {
+   "t": 8,
+   "frame": "frames/f009.jpg",
+   "visual": {
+    "summary": "The large IWA logo wipes off to the right, partially exiting the frame with only a fragment of 'Immersive' text visible at the right edge.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA",
+     "Immersive"
+    ],
+    "transition": "wipe",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo wipes out over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:32+00:00"
+  }
+ ]
+}

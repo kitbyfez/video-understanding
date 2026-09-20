@@ -1,0 +1,165 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-11-snap-turn",
+  "source_file": "11-snap-turn.mp4",
+  "sha256": "e1627a84c97df530b07211f6a3a47086534f93e80434de62dc82108cedf5251e",
+  "duration_s": 4.633,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view of the campsite locked on the cooking pot on its tripod over the campfire, with the workbench and rolled bedroll to the right and the dark floating PROMETHEUS journal panel in the upper left. Two white controller pills hover at the bottom of frame. No snap rotation is visible; the view holds steady between steps.",
+    "subjects": [
+     "cooking pot on tripod",
+     "campfire",
+     "workbench with rolled bedroll",
+     "floating PROMETHEUS journal UI panel",
+     "VR controller pills",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "11 · Snap turning — release between steps",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The snap-turn step release is demonstrated by the view holding steady on the campsite rather than rotating.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Same locked campsite view: cooking pot over the campfire, workbench with bedroll to the right, PROMETHEUS journal panel floating upper left, controller pills at the bottom. The campfire flame flickers but the viewpoint does not move.",
+    "subjects": [
+     "cooking pot on tripod",
+     "campfire",
+     "workbench with rolled bedroll",
+     "floating PROMETHEUS journal UI panel",
+     "VR controller pills",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "11 · Snap turning — release between steps",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Viewpoint remains fixed between snap-turn steps.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Unchanged campsite framing: campfire and cooking pot centered, workbench with bedroll right, PROMETHEUS journal panel upper left, controller pills bottom. HUD stats hold at zero progress and Nourishment 65/100.",
+    "subjects": [
+     "cooking pot on tripod",
+     "campfire",
+     "workbench with rolled bedroll",
+     "floating PROMETHEUS journal UI panel",
+     "VR controller pills",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "11 · Snap turning — release between steps",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Viewpoint remains fixed between snap-turn steps.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "View still locked on the campsite: the cooking pot tripod and campfire anchor the frame, bedroll-laden workbench to the right, floating journal panel upper left, controller pills at bottom. No visible rotation step occurs.",
+    "subjects": [
+     "cooking pot on tripod",
+     "campfire",
+     "workbench with rolled bedroll",
+     "floating PROMETHEUS journal UI panel",
+     "VR controller pills",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "11 · Snap turning — release between steps",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Viewpoint remains fixed between snap-turn steps.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "Final second holds the identical campsite composition: cooking pot over fire, workbench with bedroll, floating PROMETHEUS journal panel, controller pills, low-poly treeline. The snap-turn release is shown as a steady hold, not a sweep.",
+    "subjects": [
+     "cooking pot on tripod",
+     "campfire",
+     "workbench with rolled bedroll",
+     "floating PROMETHEUS journal UI panel",
+     "VR controller pills",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "11 · Snap turning — release between steps",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Viewpoint remains fixed between snap-turn steps.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  }
+ ]
+}

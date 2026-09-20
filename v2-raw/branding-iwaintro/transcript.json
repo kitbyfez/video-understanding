@@ -1,0 +1,15 @@
+{
+ "engine": "faster-whisper/base",
+ "words": [],
+ "corrections": [
+  {
+   "op": "remove",
+   "word": " You",
+   "start": 0.0,
+   "end": 2.0,
+   "reason": "whisper hallucination on music-only logo animation; no speech present",
+   "by": "kit",
+   "at": "2026-09-20T23:31:21+00:00"
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-13-enter-vr",
+  "source_file": "13-enter-vr.mp4",
+  "sha256": "f1a16456de3cdedb5f1c511df290213071904ec7cf01ab40409c7be648dbc70f",
+  "duration_s": 3.567,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view of the campsite angled left: the wooden workbench occupies the lower left, the cooking-pot tripod over the campfire sits mid-frame, and the dark PROMETHEUS journal panel floats small in the background against the pine treeline.",
+    "subjects": [
+     "wooden workbench",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "13 · Enter VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The campsite is shown with the journal panel visible in the background, preceding the Enter VR interaction.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Campsite view with a white VR controller pill now visible over the workbench; the campfire tripod and cooking pot sit mid-frame and the PROMETHEUS journal panel floats in the background. Framing is slightly shifted right from the previous second but the scene content is unchanged.",
+    "subjects": [
+     "wooden workbench",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass",
+     "VR controller pill"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "13 · Enter VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The view holds on the campsite while the Enter VR action is performed through the journal off-frame.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Identical campsite framing to the previous second: controller pill over the workbench, campfire with cooking pot mid-frame, distant PROMETHEUS journal panel, pine treeline. No visual change occurs during this second.",
+    "subjects": [
+     "wooden workbench",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass",
+     "VR controller pill"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "13 · Enter VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Static campsite view; no fade, passthrough, or transition effect is visible in this second.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Final second holds the same campsite composition: workbench with the controller pill, campfire tripod with cooking pot, distant journal panel, and treeline. The HUD remains at zero progress with Nourishment 65/100 throughout.",
+    "subjects": [
+     "wooden workbench",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass",
+     "VR controller pill"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "13 · Enter VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Static campsite view; no fade, passthrough, or transition effect is visible in this second.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  }
+ ]
+}

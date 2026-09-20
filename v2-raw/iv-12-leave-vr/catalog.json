@@ -1,0 +1,124 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-12-leave-vr",
+  "source_file": "12-leave-vr.mp4",
+  "sha256": "8cbd112bb94ce0e5fdb3456c72ce0599ee37b6c2b4367f86ae2d938c6898f0ff",
+  "duration_s": 3.933,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view facing the dark floating PROMETHEUS journal panel, which fills the left-center of frame showing a header and stacked menu rows with one row highlighted. Low-poly trees and grass fill the background around the panel.",
+    "subjects": [
+     "floating PROMETHEUS journal UI panel with menu rows",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR campsite, looking at the floating journal UI, daytime",
+    "on_screen_text": [
+     "12 · Leave VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The journal is open in front of the viewer, showing its menu rows with one button highlighted for the Leave VR action.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Same journal-facing view: the dark PROMETHEUS panel with its header and menu rows still dominates the left-center, one row highlighted, with the grassy hillside and pine trees behind it. Nothing on the HUD changes.",
+    "subjects": [
+     "floating PROMETHEUS journal UI panel with menu rows",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR campsite, looking at the floating journal UI, daytime",
+    "on_screen_text": [
+     "12 · Leave VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The journal remains open on the same menu, highlighted button unchanged.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "The view cuts to the open campsite: wooden workbench and the cooking-pot tripod over the campfire at right, rolled bedroll on the bench, and the PROMETHEUS journal panel now small and distant in the background. Grass, dirt path, and pine trees fill the wide view.",
+    "subjects": [
+     "workbench with rolled bedroll",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "12 · Leave VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "cut",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The view jumps from the journal to the campsite, consistent with the Leave VR selection taking effect.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Holds on the campsite view from the previous second: workbench, campfire tripod with cooking pot, distant journal panel, and the treeline. The HUD stays at zero progress with Nourishment 65/100.",
+    "subjects": [
+     "workbench with rolled bedroll",
+     "campfire with cooking pot",
+     "floating PROMETHEUS journal UI panel (distant)",
+     "low-poly trees and grass"
+    ],
+    "setting": "Low-poly VR survival-crafting campsite, daytime",
+    "on_screen_text": [
+     "12 · Leave VR through the journal",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The campsite view holds after the journal view released.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-d",
+   "described_at": "2026-09-20T23:32:47+00:00"
+  }
+ ]
+}

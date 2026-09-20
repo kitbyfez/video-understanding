@@ -1,0 +1,401 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "iv-01-ingredients",
+  "source_file": "01-ingredients.mp4",
+  "sha256": "1fb8519c78587f6ec218da9515847131fa3d3409858057e9f7c81ffb0d2748e5",
+  "duration_s": 13.333,
+  "fps": 30.0,
+  "width": 1280,
+  "height": 840,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "no-audio-stream",
+  "words": [],
+  "corrections": []
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "First-person view of a low-poly forest campsite: a cooking pot on a tripod over a campfire, a wooden workbench holding a red apple, a white ingredient and an orange bowl, and a floating dark journal panel titled PROMETHEUS on the right.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "ingredients",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS",
+     "Cook a meal",
+     "Make a torch"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction beginning: the player picks up ingredients, with the HUD counter at 0/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "Same first-person campsite view; the pot still hangs over the campfire and the workbench still holds its ingredients. The HUD ingredient counter remains at 0/2.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction in progress; the counter is still 0/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "Same first-person campsite view; the campfire burns under the pot and the workbench ingredients are untouched. The HUD still reads Ingredients 0/2.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction in progress; the counter is still 0/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "Same first-person campsite view with no visible change to the pot, fire, or workbench. The HUD ingredient counter is still at 0/2.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction in progress; the counter is still 0/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 4,
+   "frame": "frames/f005.jpg",
+   "visual": {
+    "summary": "Same first-person campsite view; one ingredient appears to have been picked up from the workbench and the HUD counter still reads Ingredients 0/2.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 0/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction in progress; the counter is still 0/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 5,
+   "frame": "frames/f006.jpg",
+   "visual": {
+    "summary": "Same campsite view; the HUD ingredient counter advances to 1/2, marking the first ingredient added to the cooking pot. The campfire and journal panel are unchanged.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction succeeding: the Ingredients counter advances 0/2 → 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 6,
+   "frame": "frames/f007.jpg",
+   "visual": {
+    "summary": "Same campsite view with the ingredient counter holding at 1/2. The pot hangs over the campfire and the remaining ingredients sit on the workbench.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction continuing; the counter holds at 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 7,
+   "frame": "frames/f008.jpg",
+   "visual": {
+    "summary": "Same campsite view; the player is between ingredient pickups with the counter at 1/2. Campfire, pot, and journal panel are unchanged.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction continuing; the counter holds at 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 8,
+   "frame": "frames/f009.jpg",
+   "visual": {
+    "summary": "Same campsite view; the workbench now shows fewer items and the HUD still reads Ingredients 1/2 as the player prepares the second ingredient.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction continuing; the counter holds at 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 9,
+   "frame": "frames/f010.jpg",
+   "visual": {
+    "summary": "Same campsite view; the HUD ingredient counter remains at 1/2 with the campfire burning under the pot and the journal panel visible on the right.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction continuing; the counter holds at 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 10,
+   "frame": "frames/f011.jpg",
+   "visual": {
+    "summary": "Same campsite view; the HUD still reads Ingredients 1/2. The workbench ingredients are nearly gone as the player carries the second ingredient.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 1/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction continuing; the counter holds at 1/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 11,
+   "frame": "frames/f012.jpg",
+   "visual": {
+    "summary": "Same campsite view; the HUD ingredient counter reaches 2/2, completing the ingredient pickup step. The pot simmers over the campfire.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 2/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction completing: the Ingredients counter advances 1/2 → 2/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 12,
+   "frame": "frames/f013.jpg",
+   "visual": {
+    "summary": "Same campsite view with the HUD holding at Ingredients 2/2. The campfire, pot, and PROMETHEUS journal panel are all unchanged.",
+    "subjects": [
+     "cooking pot",
+     "campfire",
+     "workbench",
+     "journal panel"
+    ],
+    "setting": "Low-poly VR survival-crafting game campsite; bright forest clearing.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "Ingredients 2/2 · Stir 0% · Materials 0/3 · Strikes 0/3 · Torch — · Nourishment 65/100",
+     "PROMETHEUS"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. The visual shows the named interaction complete; the counter holds at 2/2.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  },
+  {
+   "t": 13,
+   "frame": "frames/f014.jpg",
+   "visual": {
+    "summary": "Cut to a full-screen title card: the banner text '01 · Pick up and add ingredients' sits over a forest treetop background with the PROMETHEUS journal panel on the right, ending the clip.",
+    "subjects": [
+     "title card",
+     "forest",
+     "journal panel"
+    ],
+    "setting": "Title card over low-poly forest background.",
+    "on_screen_text": [
+     "01 · Pick up and add ingredients",
+     "PROMETHEUS",
+     "Cook a meal",
+     "Make a torch"
+    ],
+    "transition": "cut",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration; silent gameplay capture. Title card summarizing the completed interaction.",
+   "described": true,
+   "annotated": false,
+   "described_by": "desc-a",
+   "described_at": "2026-09-20T23:32:53+00:00"
+  }
+ ]
+}

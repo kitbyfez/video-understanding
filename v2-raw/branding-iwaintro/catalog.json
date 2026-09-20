@@ -1,0 +1,116 @@
+{
+ "format": "video-understanding/1",
+ "video": {
+  "id": "branding-iwaintro",
+  "source_file": "IWAIntro.mp4",
+  "sha256": "ef39a36379fc3c815369622a7d8fca3d8b337fffe492e1fc8e7e4f173d27c4f8",
+  "duration_s": 3.875,
+  "fps": 24.0,
+  "width": 1920,
+  "height": 1080,
+  "analyzed_at": "2026-09-20"
+ },
+ "transcript": {
+  "engine": "faster-whisper/base",
+  "words": [],
+  "corrections": [
+   {
+    "op": "remove",
+    "word": " You",
+    "start": 0.0,
+    "end": 2.0,
+    "reason": "whisper hallucination on music-only logo animation; no speech present",
+    "by": "kit",
+    "at": "2026-09-20T23:31:21+00:00"
+   }
+  ]
+ },
+ "seconds": [
+  {
+   "t": 0,
+   "frame": "frames/f001.jpg",
+   "visual": {
+    "summary": "A thin white vertical stroke draws in on a black background: the opening beat of the IWA logo animation.",
+    "subjects": [
+     "IWA logo (partial)"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo draw-on animation plays over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:33+00:00"
+  },
+  {
+   "t": 1,
+   "frame": "frames/f002.jpg",
+   "visual": {
+    "summary": "The IWA logotype completes as a thin white outline on the black background.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo draw-on animation plays over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:33+00:00"
+  },
+  {
+   "t": 2,
+   "frame": "frames/f003.jpg",
+   "visual": {
+    "summary": "The logo fills solid white with a blue segmented arc sweeping over the upper right of the A.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the logo resolves over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:33+00:00"
+  },
+  {
+   "t": 3,
+   "frame": "frames/f004.jpg",
+   "visual": {
+    "summary": "The resolved white IWA logo with its blue arc holds static on black.",
+    "subjects": [
+     "IWA logo"
+    ],
+    "setting": "black background, motion-graphics logo animation",
+    "on_screen_text": [
+     "IWA"
+    ],
+    "transition": "none",
+    "camera": "static"
+   },
+   "narration": [],
+   "match": "No spoken narration in this second; the resolved logo holds over music.",
+   "described": true,
+   "annotated": false,
+   "described_by": "kit",
+   "described_at": "2026-09-20T23:31:33+00:00"
+  }
+ ]
+}
